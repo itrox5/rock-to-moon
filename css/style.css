@@ -1,0 +1,138 @@
+/**** TAGS ****/
+
+html {
+  box-sizing: border-box;
+  font-size: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 10rem;
+  line-height: 1;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+  font-size: 40px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+  background: url(../img/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/**** BLOCKS ****/
+
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.score {
+  background: rgba(255,255,255,0.2);
+  padding: 0 3rem;
+  line-height: 1;
+  border-radius: 1rem;
+  margin: 0 0 0 40px;
+}
+
+.cursor-style {
+  cursor: url(../img/rocket-158_128.gif), auto;
+}
+
+.game__moon {
+  background: url('../img/Moon.png') bottom center no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition:all 0.4s;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 9;
+  top: 0;
+}
+
+/**** ELEMENTS ****/
+
+.game__cloud {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.game__cloud:after {
+  display: block;
+  background: url('../img/gray-clouds-clipart-6.png') bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height:124px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+.overlay__instructions {
+  top: 20%;
+}
+
+.overlay__final-core{
+  top: 64%;
+}
+
+.game__cloud .game__moon {
+  background: url('../img/Moon.png') bottom center no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition:all 0.4s;
+} 
+
+.game__cloud.up .game__moon {
+  top: 0;
+}
+
+button.overlay__play-button {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  border: 2px solid white;
+  background-color: red;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  cursor: hand;
+  cursor: pointer;
+  opacity: 0.8;
+}
